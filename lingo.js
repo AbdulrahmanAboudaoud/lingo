@@ -56,3 +56,19 @@ function createDivs(qty){
 	document.getElementById(wordId+"_letter_"+1).innerHTML = word[0];
 	wordId++;
 }
+
+function checkLetters(gameOverCheck){
+	copyWord = [...word];
+	for(i=0; i<userWord.length; i++){
+		document.getElementById((wordId-1)+"_letter_"+(i+1)).innerHTML = userWord[i];
+		 document.getElementById((wordId-1)+"_letter_"+(i+1)).style.backgroundColor = "red";
+	
+        if (copyWord[i] == userWord[i]) {
+			document.getElementById((wordId-1)+"_letter_"+(i+1)).style.backgroundColor = "green";
+			w=copyWord[i] = "*";
+			userWord[i] = "";
+		}
+	}  
+
+
+}
